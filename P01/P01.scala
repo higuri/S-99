@@ -3,7 +3,11 @@ object P01 {
   // last:
   // - generic (polymorphic) method [parameterized by type].
   def last[A](list0: List[A]): A = {
-    return list0.last
+    list0 match {
+      case h :: Nil => h
+      case _ :: tail => last(tail)
+      case _         => throw new Exception
+    }
   }
 
   // main:
