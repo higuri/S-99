@@ -5,8 +5,7 @@ object P01 {
   def last[A](list0: List[A]): A = {
     // use list pattern match.
     // * list is built from
-    //   elem0 :: elem1 :: elem2 :: Nil
-    //   [Nil terminated].
+    //   elem0 :: elem1 :: elem2 :: Nil [Nil terminated].
     list0 match {
       // e.g. 8 :: Nil
       case head :: Nil => head
@@ -14,6 +13,23 @@ object P01 {
       case head :: list1 => last(list1)
       case _         => throw new Exception
     }
+
+    // another list pattern match.
+    // * without knowledge that List is Nil terminated.
+    //list0 match {
+    //  case List(elem0) => elem0
+    //  case elem0 :: list1  => last(list1)
+    //  case _ => throw new Exception
+    //}
+
+    // yet another list pattern match (but this uses list API).
+    // * use pattern guard (case ... if ...).
+    //list0 match {
+    //  case list1 if list1.length == 1 => list1(0)
+    //  case list1 if 1 < list1.length => last(list1.drop(1))
+    //  case _ => throw new Exception
+    //}
+
   }
 
   // main:
