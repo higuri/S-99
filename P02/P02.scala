@@ -9,12 +9,18 @@ object P02 {
   // penultimate:
   def penultimate[A](list0: List[A]): A = {
     // case0
-    // use List API.
+    // use List API
     /*
     list0(list0.length - 1)
     */
 
     // case 1
+    // use another List API
+    /*
+    list0.takeRight(2)(0)
+    */
+
+    // case 2
     // use List patter matching
     list0 match {
       case elem0 :: elem1 :: Nil => elem0
