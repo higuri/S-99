@@ -21,7 +21,7 @@ object P05 {
     list1
     */
 
-    // case 1
+    // case 2
     // functional style (recursion)
     // [tips]
     // > def :::(prefix: List[A]): List[A]
